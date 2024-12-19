@@ -1,0 +1,400 @@
+/* Rem and Em do NOT depend on HTML font-size in media queries! 
+Instead, 1rem = 1em = 16px */
+
+/* 1350px / 16 = 84.375 (round it down to 84 em) = 84 * 16px = 1344 px */
+
+/* ***************************** */
+/* Below 1344px (Smaller Desktops) */
+/* ***************************** */
+
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+}
+
+/* ***************************** */
+/* Below 1200px (Landscape Tablets) */
+/* ***************************** */
+
+@media (max-width: 75em) {
+  html {
+    /* 9px divided by 16 = 0.5625 */
+    font-size: 56.25%;
+  }
+
+  .heading-primary {
+    margin-bottom: 2.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3rem;
+  }
+
+  .subheading {
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    margin-left: 2rem;
+  }
+
+  .main-nav-list {
+    margin-right: 2rem;
+    gap: 3.2rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 1.6rem 2.4rem;
+  }
+
+  .grid {
+    gap: 8rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .testimonial-container {
+    padding: 12.8rem 2.4rem 9.6rem 2.4rem;
+  }
+
+  .testimonials:nth-child(-n + 4) {
+    align-items: self-start;
+  }
+
+  .header {
+    padding: 0 2.4rem;
+  }
+
+  .container.CTA--container {
+    width: 100rem;
+  }
+}
+
+/* ***************************** */
+/* Below 960px = 60em (Tablets) */
+/* ***************************** */
+
+@media (max-width: 60em) {
+  html {
+    /* 8px divided by 16 = 0.5 */
+    font-size: 50%;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6.4rem;
+    padding: 0 9.6rem;
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+
+  .hero div:first-child {
+    order: 2;
+  }
+
+  .hero-img {
+    width: 75%;
+  }
+
+  /* .heading-primary {
+    font-size: 3.6rem;
+  } */
+
+  .carousel {
+    width: 90rem;
+  }
+
+  .class-description {
+    font-size: 1.6rem;
+  }
+
+  .testimonial-img {
+    width: 35rem;
+    height: 25rem;
+  }
+
+  .container.CTA--container {
+    width: 90rem;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem 3.2rem 3.2rem 3.2rem;
+    color: #e6f0e6;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 1.6rem 1.6rem;
+  }
+
+  /* MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+
+  .main-nav {
+    background-color: rgb(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in;
+
+    /* HIDING NAVGIATION */
+    /* display: none = Allows NO transition animation at all */
+
+    /* 1) Hides the element VISUALLY */
+    opacity: 0;
+
+    /* 2) Make it INACCESSIBLE to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+}
+
+/* ***************************** */
+/* Below 704px = 44em (Smaller Tablets) */
+/* ***************************** */
+@media (max-width: 44em) {
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .carousel {
+    display: grid;
+    width: 55rem;
+
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    /* Text color was overwritten */
+    /* color: #fff; */
+
+    gap: 4.8rem;
+  }
+
+  .class-type {
+    margin-bottom: 2.4rem;
+  }
+
+  .description-heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.4rem;
+  }
+
+  .class-description {
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    width: 90%;
+  }
+
+  .carousel-img-1 {
+    width: 35rem;
+    height: 85%;
+    /* transform: scale(1); */
+    justify-self: center;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .FAQ--container {
+    width: 60rem;
+  }
+
+  .hidden-box ul {
+    line-height: 1.5;
+  }
+
+  .container.CTA--container {
+    width: 60rem;
+  }
+
+  .cta-form input {
+    font-size: 1.4rem;
+  }
+
+  .btn--form {
+    font-size: 1.3rem;
+  }
+}
+
+/* ***************************** */
+/* Below 544px = 34em (Phones) */
+/* ***************************** */
+
+@media (max-width: 44em) {
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .hero-img {
+    width: 80%;
+  }
+
+  .subheading {
+    display: flex;
+    justify-content: center;
+  }
+
+  .heading-secondary {
+    display: flex;
+    justify-content: center;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .section-testimonials.grid.grid--1-col {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials {
+    justify-items: center;
+  }
+
+  .testimonial-img {
+    width: 35rem;
+    height: 25rem;
+  }
+
+  .subheading--carousel {
+    margin-left: 0rem;
+  }
+
+  .heading-secondary--carousel {
+    margin-left: 0rem;
+  }
+
+  .carousel {
+    display: grid;
+    width: 45rem;
+  }
+
+  .container {
+    padding: 0 1.4rem;
+  }
+
+  .carousel-img-1 {
+    width: 30rem;
+    height: 90%;
+    justify-self: center;
+  }
+
+  /* .heading-secondary--FAQ {
+    letter-spacing: -1px;
+  } */
+
+  .short-text {
+    display: inline-block;
+  }
+  .full-text {
+    display: none;
+  }
+
+  .FAQ--container {
+    width: 47rem;
+  }
+
+  .FAQ-heading--container {
+    width: 100%;
+  }
+
+  .short-text {
+    display: flex;
+    justify-content: center;
+  }
+
+  .container.CTA--container {
+    width: 47rem;
+  }
+
+  .container.CTA--container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-img-box {
+    height: 40rem;
+    width: 47rem;
+    grid-row: 1;
+  }
+
+  .cta-text {
+    margin-bottom: 3.2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .grid--footer {
+    gap: 8rem 4rem;
+    padding: 0 2.4rem;
+  }
+
+  .nav-col {
+    grid-column: span 2;
+    justify-self: normal;
+  }
+}
+
+/* -FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98  */
+
+/* -SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128  */
